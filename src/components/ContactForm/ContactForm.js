@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/contactsSelectors';
 import { Form } from './ContactForm.styled';
 import { addContact } from 'redux/contacts/contactsOperations';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import PropTypes from 'prop-types';
 
 const ContactForm = ({ closeModal }) => {
   const [name, setName] = useState('');
