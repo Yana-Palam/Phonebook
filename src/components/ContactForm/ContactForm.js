@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
-import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/contactsSelectors';
-import { Form, Label, Input } from './ContactForm.styled';
-import Button from 'components/Button';
+import { Form } from './ContactForm.styled';
 import { addContact } from 'redux/contacts/contactsOperations';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import PropTypes from 'prop-types';
 
-const ContactForm = () => {
+const ContactForm = ({ closeModal }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
@@ -40,6 +41,7 @@ const ContactForm = () => {
     };
     dispatch(addContact(newContact));
     reset();
+    closeModal();
   };
 
   const reset = () => {
@@ -47,37 +49,38 @@ const ContactForm = () => {
     setNumber('');
   };
 
-  const nameInputId = nanoid();
-  const numberInputId = nanoid();
   return (
-    <>
-      <Form onSubmit={handleSubmit}>
-        <Label htmlFor={nameInputId}>Name</Label>
-        <Input
-          id={nameInputId}
-          type="text"
-          name="name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          required
-          value={name}
-          onChange={handleChange}
-        />
-        <Label htmlFor={numberInputId}>Number</Label>
-        <Input
-          id={numberInputId}
-          type="tel"
-          name="number"
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          required
-          value={number}
-          onChange={handleChange}
-        />
-        <Button type="submit" children="Add contacts" />
-      </Form>
-    </>
+    <Form onSubmit={handleSubmit}>
+      <TextField
+        sx={{ m: 1, width: '100%' }}
+        id="filled-basic"
+        label="Name"
+        variant="filled"
+        required
+        name="name"
+        type="text"
+        onChange={handleChange}
+      />
+      <TextField
+        sx={{ m: 1, width: '100%' }}
+        id="filled-basic"
+        label="Number"
+        variant="filled"
+        required
+        name="number"
+        type="text"
+        onChange={handleChange}
+      />
+
+      <Button variant="contained" type="submit">
+        Add contact
+      </Button>
+    </Form>
   );
+};
+
+ContactForm.propTypes = {
+  closeModal: PropTypes.func.isRequired,
 };
 
 export default ContactForm;

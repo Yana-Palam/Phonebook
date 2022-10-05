@@ -1,20 +1,17 @@
 import styled from 'styled-components';
 
 export const Contact = styled.li`
-  border: 2px solid #5446aa;
-  border-radius: 4px;
-  padding: 6px 12px;
-  min-width: 490px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: calc((100% - 2 * 30px) / 3);
 
-  &:not(:last-of-type) {
-    margin-bottom: 10px;
-  }
+  display: flex;
+  align-items: center;
 `;
 
 export const List = styled.ul`
-  font-size: 24px;
+  font-size: 16px;
+
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 30px;
 `;

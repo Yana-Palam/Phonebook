@@ -1,38 +1,67 @@
 import React from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { lazy } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ContactForm from './ContactForm';
-import ContactList from './ContactList';
-import Filter from './Filter';
 import { GlobalStyles } from 'utils/GlobalStyle';
-import { Wrapper, TitlePhonebook, TitleContacts } from './App.styled';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from 'redux/contacts/contactsOperations';
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { selectError, selectIsLoading } from 'redux/contacts/contactsSelectors';
-import Loader from './Loader';
+import Layout from './Layout';
+import ContactsPage from 'pages/ContactsPage';
+import LoginPage from 'pages/LoginPage';
+import RegisterPage from 'pages/RegisterPage';
+import HomePage from 'pages/HomePage';
+import PrivateRoute from '../HOCs/PrivateRoute';
+import RestrictedRoute from '../HOCs/RestrictedRoute';
+import { fetchCurrentUser } from 'redux/auth/authOperations';
+// const Layout = lazy(() => import('./Layout'));
+// const ContactsPage = lazy(() => import('pages/ContactsPage'));
+// const LoginPage = lazy(() => import('pages/LoginPage'));
+// const RegisterPage = lazy(() => import('pages/RegisterPage'));
+// const HomePage = lazy(() => import('pages/HomePage'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  const error = useSelector(selectError);
-  const isLoading = useSelector(selectIsLoading);
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(fetchCurrentUser());
   }, [dispatch]);
 
-  error && toast.error(error);
-
   return (
-    <Wrapper>
-      <TitlePhonebook>Phonebook</TitlePhonebook>
-      <ContactForm />
-      <TitleContacts>Contacts</TitleContacts>
-      <Filter />
-      <ContactList />
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route
+            path="/register"
+            element={
+              <RestrictedRoute
+                redirectTo="/contacts"
+                component={<RegisterPage />}
+              />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <RestrictedRoute
+                redirectTo="/contacts"
+                component={<LoginPage />}
+              />
+            }
+          />
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+            }
+          />
+        </Route>
+
+        <Route path="*" element={<Navigate to="/login" replace />} />
+      </Routes>
       <GlobalStyles />
       <ToastContainer style={{ fontSize: '20px' }} />
-      {isLoading && !error && <Loader />}
-    </Wrapper>
+    </>
   );
 };
