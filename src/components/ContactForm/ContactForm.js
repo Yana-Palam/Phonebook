@@ -80,7 +80,7 @@ const ContactForm = ({ closeModal }) => {
 };
 
 ContactForm.propTypes = {
-  closeModal: PropTypes.func.isRequired,
+  closeModal: PropTypes.func,
 };
 
 export default ContactForm;

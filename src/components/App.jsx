@@ -7,18 +7,13 @@ import { GlobalStyles } from 'utils/GlobalStyle';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import Layout from './Layout';
-import ContactsPage from 'pages/ContactsPage';
-import LoginPage from 'pages/LoginPage';
-import RegisterPage from 'pages/RegisterPage';
-import HomePage from 'pages/HomePage';
 import PrivateRoute from '../HOCs/PrivateRoute';
 import RestrictedRoute from '../HOCs/RestrictedRoute';
 import { fetchCurrentUser } from 'redux/auth/authOperations';
-// const Layout = lazy(() => import('./Layout'));
-// const ContactsPage = lazy(() => import('pages/ContactsPage'));
-// const LoginPage = lazy(() => import('pages/LoginPage'));
-// const RegisterPage = lazy(() => import('pages/RegisterPage'));
-// const HomePage = lazy(() => import('pages/HomePage'));
+const ContactsPage = lazy(() => import('../pages/ContactsPage'));
+const LoginPage = lazy(() => import('../pages/LoginPage'));
+const RegisterPage = lazy(() => import('../pages/RegisterPage'));
+const HomePage = lazy(() => import('../pages/HomePage'));
 
 export const App = () => {
   const dispatch = useDispatch();
