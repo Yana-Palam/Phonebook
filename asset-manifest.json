@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.a3e7d15b.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.35522ad1.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.05adbb89.js",
     "static/js/99.b7024c31.chunk.js": "/goit-react-hw-08-phonebook/static/js/99.b7024c31.chunk.js",
     "static/js/641.c952e8a0.chunk.js": "/goit-react-hw-08-phonebook/static/js/641.c952e8a0.chunk.js",
     "static/js/638.2b89e093.chunk.js": "/goit-react-hw-08-phonebook/static/js/638.2b89e093.chunk.js",
-    "static/js/439.c8245931.chunk.js": "/goit-react-hw-08-phonebook/static/js/439.c8245931.chunk.js",
+    "static/js/439.10683eb3.chunk.js": "/goit-react-hw-08-phonebook/static/js/439.10683eb3.chunk.js",
     "static/js/454.abb765af.chunk.js": "/goit-react-hw-08-phonebook/static/js/454.abb765af.chunk.js",
     "static/media/train-track.webp": "/goit-react-hw-08-phonebook/static/media/train-track.cffbe248564e8b5465e3.webp",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.a3e7d15b.css.map": "/goit-react-hw-08-phonebook/static/css/main.a3e7d15b.css.map",
-    "main.35522ad1.js.map": "/goit-react-hw-08-phonebook/static/js/main.35522ad1.js.map",
+    "main.05adbb89.js.map": "/goit-react-hw-08-phonebook/static/js/main.05adbb89.js.map",
     "99.b7024c31.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/99.b7024c31.chunk.js.map",
     "641.c952e8a0.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/641.c952e8a0.chunk.js.map",
     "638.2b89e093.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/638.2b89e093.chunk.js.map",
-    "439.c8245931.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/439.c8245931.chunk.js.map",
+    "439.10683eb3.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/439.10683eb3.chunk.js.map",
     "454.abb765af.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/454.abb765af.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a3e7d15b.css",
-    "static/js/main.35522ad1.js"
+    "static/js/main.05adbb89.js"
   ]
 }
