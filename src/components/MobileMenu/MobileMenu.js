@@ -14,7 +14,7 @@ const MobileMenu = ({ onClose }) => {
       >
         <CloseIcon sx={{ color: '#ffffff', opacity: '0.7' }} />
       </IconButton>
-      <Navigation />
+      <Navigation onClose={onClose} />
     </Wrapper>
   );
 };
