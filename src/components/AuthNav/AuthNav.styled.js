@@ -4,10 +4,12 @@ import { NavLink } from 'react-router-dom';
 export const StyledLink = styled(NavLink)`
   display: inline-block;
   text-decoration: none;
-  padding: 38px 0;
   color: #ffffff;
   opacity: 0.7;
-  font-size: 20px;
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
+  font-size: 18px;
 
   &.active {
     opacity: 1;

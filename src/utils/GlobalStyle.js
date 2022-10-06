@@ -14,6 +14,7 @@ body {
     font-size: 0.875rem;
     line-height: 1.75;
     background-color: #DFDFDF;
+    color: #333741;
 }
 
 code {

@@ -1,10 +1,8 @@
 import styled from 'styled-components';
-import image from '../../assets/images/Blue-Background.jpg';
+import IconButton from '@mui/material/IconButton';
 
 export const StyledHeader = styled.header`
-  background-color: #1976d2;
-  background-image: url(${image});
-  background-size: cover;
+  background-color: #333741;
   display: flex;
   justify-content: space-between;
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
@@ -12,6 +10,24 @@ export const StyledHeader = styled.header`
 `;
 
 export const StyledWrapper = styled.div`
+  @media (max-width: 767px) {
+    display: none;
+  }
   display: flex;
   justify-content: space-between;
+  align-items: center;
+`;
+
+export const MenuWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+export const StyledButton = styled(IconButton)`
+  fill: #ffffff;
 `;

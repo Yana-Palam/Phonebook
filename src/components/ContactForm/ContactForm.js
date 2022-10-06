@@ -72,7 +72,18 @@ const ContactForm = ({ closeModal }) => {
         onChange={handleChange}
       />
 
-      <Button variant="contained" type="submit">
+      <Button
+        variant="contained"
+        type="submit"
+        sx={{
+          backgroundColor: '#333741',
+          opacity: 1,
+          '&:hover': {
+            opacity: 0.8,
+            backgroundColor: '#333741',
+          },
+        }}
+      >
         Add contact
       </Button>
     </Form>

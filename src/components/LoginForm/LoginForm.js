@@ -16,7 +16,7 @@ const LoginForm = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState('');
 
   const handleClickShowPassword = () => {
     setShowPassword(prev => !prev);
@@ -81,7 +81,18 @@ const LoginForm = () => {
             }
           />
         </FormControl>
-        <Button type="submit" variant="contained">
+        <Button
+          type="submit"
+          variant="contained"
+          sx={{
+            backgroundColor: '#333741',
+            opacity: 1,
+            '&:hover': {
+              opacity: 0.8,
+              backgroundColor: '#333741',
+            },
+          }}
+        >
           Login
         </Button>
       </Wrapper>

@@ -6,7 +6,11 @@ export const StyledBox = styled(Box)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 420px;
+  width: calc(100% - 12px);
+  @media (min-width: 425px) {
+    width: 420px;
+  }
+
   background-color: #fff;
   border-radius: 6px;
   display: flex;

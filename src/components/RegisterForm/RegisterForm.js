@@ -109,6 +109,7 @@ const RegisterForm = () => {
 
         <StyledCheck>
           <Checkbox
+            sx={{ color: '#333741' }}
             checked={checked}
             onChange={handleChangeCheck}
             inputProps={{ 'aria-label': 'controlled' }}
@@ -116,7 +117,19 @@ const RegisterForm = () => {
           <p>I accept the Privacy Policy</p>
         </StyledCheck>
 
-        <Button type="submit" variant="contained" disabled={!checked}>
+        <Button
+          type="submit"
+          variant="contained"
+          disabled={!checked}
+          sx={{
+            backgroundColor: '#333741',
+            opacity: 1,
+            '&:hover': {
+              opacity: 0.8,
+              backgroundColor: '#333741',
+            },
+          }}
+        >
           Register
         </Button>
       </Wrapper>

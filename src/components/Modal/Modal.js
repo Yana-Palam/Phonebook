@@ -11,7 +11,19 @@ const ModalEl = () => {
   const handleClose = () => setOpen(false);
   return (
     <>
-      <Button variant="contained" startIcon={<AddIcon />} onClick={handleOpen}>
+      <Button
+        variant="contained"
+        startIcon={<AddIcon />}
+        onClick={handleOpen}
+        sx={{
+          backgroundColor: '#333741',
+          opacity: 1,
+          '&:hover': {
+            opacity: 0.8,
+            backgroundColor: '#333741',
+          },
+        }}
+      >
         Add new contact
       </Button>
 
