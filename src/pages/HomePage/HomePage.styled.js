@@ -49,12 +49,5 @@ export const Text = styled.p`
 export const StyledLink = styled(Link)`
   color: #ffffff;
   text-decoration: underline;
-  @media (min-width: 768px) {
-    /* font-size: 20px; */
-  }
-  @media (min-width: 1200px) {
-    /* font-size: 30px; */
-  }
   opacity: 0.8;
-  /* text-align: center; */
 `;
